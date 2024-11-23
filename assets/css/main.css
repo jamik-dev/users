@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles here */
+html,
+body {
+	scrollbar-gutter: stable;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@layer base {
+	body {
+		@apply font-montserrat text-black bg-gray-100;
+	}
+}
+
+@layer components {
+	.card {
+		@apply py-3 px-4 rounded-2xl bg-white;
+	}
+
+	.container {
+		@apply mx-auto px-4 max-w-[1400px];
+	}
+
+	.tbody-striped tr:nth-child(odd) {
+		background-color: rgba(70, 90, 149, 0.04);
+	}
+	
+	.tbody-striped tr {
+		transition: background-color 0.2s;
+	}
+	
+	.tbody-striped tr:hover {
+		background-color: rgba(70, 90, 149, 0.08);
+	}
+}
+
+* {
+	@apply box-border m-0 p-0 text-inherit font-inherit;
+}
+
+*::-webkit-scrollbar {
+	width: 6px;
+	height: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #6C584C99;
+	border-radius: 10px;
+}
+
+/* transitions */
+.fade-enter-active,
+.fade-leave-active {
+	transition: opacity 0.3s;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+	opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+	opacity: 1;
+}
