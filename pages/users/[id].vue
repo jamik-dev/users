@@ -86,6 +86,11 @@ const usersStore = useUsers();
 // route global
 const route = useRoute();
 
+// page title
+useHead({
+	title: () => `User | ${route.params.id}`
+});
+
 // users store DATAS
 const { user } = storeToRefs(usersStore);
 
