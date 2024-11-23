@@ -1,7 +1,7 @@
 <template>
-	<main class="h-dvh flex flex-col items-center justify-center">
+	<main class="min-h-dvh flex flex-col items-center justify-center">
     <UModal v-model="mapModal" :ui="{ base: 'sm:!max-w-[1000px]' }">
-			<div class="w-full p-6 space-y-6">
+			<div class="w-full p-3 space-y-3 sm:p-6 sm:space-y-6">
 				<div class="flex items-center justify-between">
 					<h2 class="title">Location</h2>
 					<UButton color="gray" :ui="{ rounded: 'rounded-full' }" variant="ghost" icon="i-heroicons-x-mark-20-solid"
@@ -18,7 +18,7 @@
 				</div>
 			</div>
 		</UModal>
-		<section class="container space-y-4">
+		<section class="container my-3 space-y-4">
       <div class="flex gap-x-4 justify-between">
         <UButton class="flex-1 sm:flex-none sm:w-1/4" variant="solid" size="lg" icon="i-heroicons-arrow-left" to="/users" label="Go Back" />
         <UButton @click="mapModal = true" class="flex-1 sm:flex-none sm:w-1/4 justify-end" variant="solid" size="lg" trailing-icon="i-heroicons-map-pin" label="View on Map" />

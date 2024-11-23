@@ -1,7 +1,7 @@
 <template>
-	<main class="h-dvh flex items-center justify-center">
+	<main class="min-h-dvh flex items-center justify-center">
 		<section class="container">
-			<div class="bg-white rounded-2xl pb-3">
+			<div class="bg-white my-3 rounded-2xl pb-3">
 				<div class="flex px-3 py-3.5 border-b border-grey-border">
 					<UInput v-model="filterSearch" variant="outline" placeholder="Filter users..." :ui="{color: {white: {outline: 'ring-gray-200 shadow-none'}}}" />
 				</div>
@@ -47,7 +47,7 @@ useAsyncData('users', () => usersStore.getUsers());
 
 // notification
 const toast = useToast();
-onMounted(() => {
+if(users.value.length) {
 	toast.add({
 		id: 'success',
 		color: 'green',
@@ -56,7 +56,7 @@ onMounted(() => {
 		icon: 'i-heroicons-check-circle',
 		timeout: 3000
 	});
-})
+}
 
 // table
 const filterSearch = ref('');
